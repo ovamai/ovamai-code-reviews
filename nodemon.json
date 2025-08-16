@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ignore": ["src/**/*.spec.ts"],
+  "ext": "ts, js, html, css, ejs, json",
+  "exec": "ts-node-dev --respawn src/server.ts"
+}
