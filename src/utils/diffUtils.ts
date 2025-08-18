@@ -27,3 +27,18 @@ export function toTitleCase(str: string): string {
     ?.replace(/^./, s => s.toUpperCase())
     ?.replace(/\b\w/g, c => c.toUpperCase());
 }
+
+export function cleanJsonResponse(rawResponseString: string) {
+  let cleanedString = rawResponseString.trim();
+
+  if (cleanedString.startsWith('```json')) {
+    cleanedString = cleanedString.substring('```json'.length);
+  }
+  if (cleanedString.endsWith('```')) {
+    cleanedString = cleanedString.substring(0, cleanedString.length - '```'.length);
+  }
+
+  cleanedString = cleanedString.trim();
+
+  return cleanedString;
+}
